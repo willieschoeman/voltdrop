@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #555;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 300;
+    color: #555;
+}
+
+.center {
+    text-align: center;
+}

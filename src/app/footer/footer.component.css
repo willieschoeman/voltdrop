@@ -1,0 +1,12 @@
+.copyright {
+    color: #fff;
+    font-weight: 200;
+    font-size: 16px;
+    margin: auto;
+    text-align: center;
+}
+
+.custom-footer {
+    height: 150px !important;
+    background: #111 !important;
+}

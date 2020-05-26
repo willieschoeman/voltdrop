@@ -1,0 +1,26 @@
+#testimony{
+    background-image: url('../../assets/images/night.jpg');
+    background-repeat: no-repeat;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    height:100%;
+    width:100%;
+    color:white;
+    background-size:cover;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.testimony {
+    margin: 50px 200px;
+    min-height: 170px;
+    background-color: transparent
+}
+
+@media (max-width: 991.98px) {
+
+    .testimony {
+        margin: 50px 40px;
+    }
+
+}

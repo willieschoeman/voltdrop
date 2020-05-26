@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.cancel(this.timerThree)
       }
 
-    }, 20)
+    }, 15)
 
     this.timerFour = setInterval(() => {
       this.fourtCounter++
@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.cancel(this.timerFour)
       }
 
-    }, 50)
+    }, 40)
   }
   
   get f() { return this.contactForm.controls; }

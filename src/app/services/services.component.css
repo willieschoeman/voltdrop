@@ -13,6 +13,14 @@
     color: #555;
 }
 
+#section-services {
+  padding-top: 30px;
+}
+
+#section-services h2 {
+  padding-bottom: 20px;
+}
+
 .icon-holder {
     width: 80px;
     margin: auto;

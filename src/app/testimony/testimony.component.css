@@ -8,13 +8,16 @@
     width:100%;
     color:white;
     background-size:cover;
+    background-attachment: fixed;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .testimony {
     margin: 50px 200px;
     min-height: 170px;
-    background-color: transparent
+    font-size: 22px;
+    background-color: transparent;
+    text-shadow: 1px 1px 1px black;
 }
 
 @media (max-width: 991.98px) {

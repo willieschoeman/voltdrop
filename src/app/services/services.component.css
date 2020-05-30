@@ -27,16 +27,23 @@
     margin-top: 20px;
     height: 80px;
     padding: 15px;
-    background: #2eabff;
+    background: rgb(8, 163, 224);
     box-shadow: 1px 1px 12px 3px #aaa;
     color: white;
     border-radius: 50%;
     transition: 0.3s;
 }
 
+.icon-info {
+  color: #aaa;
+  font-weight: 300;
+  float: right;
+  padding-right: 10px;
+}
+
 .icon-holder:hover {
     background: #fff;
-    color: #2eabff;
+    color: rgb(8, 163, 224);
     cursor: pointer;
 }
 

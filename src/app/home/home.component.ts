@@ -41,11 +41,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.timerOne = setInterval(() => {
       this.firstCounter++
 
-      if (this.firstCounter === 889) {
+      if (this.firstCounter === 341) {
         this.cancel(this.timerOne)
       }
 
-    }, 50)
+    }, 100)
 
 
     this.timerTwo = setInterval(() => {
@@ -69,11 +69,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.timerFour = setInterval(() => {
       this.fourtCounter++
 
-      if (this.fourtCounter === 540) {
+      if (this.fourtCounter === 442) {
         this.cancel(this.timerFour)
       }
 
-    }, 40)
+    }, 140)
   }
   
   get f() { return this.contactForm.controls; }
@@ -87,6 +87,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
       console.log(this.contactForm.value)
 
+  }
+
+  goToFacebook() {
+    window.open('https://www.facebook.com/pages/category/Business-Service/Volt-Drop-Electrical-2111756612447279/', "_blank");
   }
 
   cancel(timer) {

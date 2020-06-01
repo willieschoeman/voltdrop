@@ -197,6 +197,7 @@ section.section {
     transition: 0.4s;
     box-shadow: 2px 2px 16px 1px rgb(148, 148, 148);
     cursor: pointer;
+    object-fit: cover;
 }
 
 .images img:hover {

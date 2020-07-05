@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiService {
 
-  private emailUrl = 'http://localhost/email'
+  private emailUrl = 'https://voltdrop.co.za/email'
 
   constructor(private http: HttpClient) {
   }

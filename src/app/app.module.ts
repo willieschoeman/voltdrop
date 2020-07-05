@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ServicesComponent } from './services/services.component';
 import { TestimonyComponent } from './testimony/testimony.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -25,9 +28,13 @@ import { TestimonyComponent } from './testimony/testimony.component';
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    CarouselModule
+    CarouselModule,
+    HttpClientModule,
+    ModalModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

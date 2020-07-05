@@ -156,6 +156,14 @@
     width: 200px;
 }
 
+.email-btn {
+    width: 160px;
+}
+
+.modal-header h4 {
+    text-shadow: unset;
+}
+
 section.section {
     margin: 0;
     padding: 40px 0 60px 0;

@@ -1,5 +1,8 @@
-import { OnInit, Component, AfterViewInit } from "@angular/core";
+import { OnInit, Component, AfterViewInit, ElementRef, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { ApiService } from '../api.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('emailModal') emailModal: ElementRef
+  public modalRef: BsModalRef
   firstCounter: number
   secondCounter: number
   thirdCounter: number
@@ -16,15 +21,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private timerTwo
   private timerThree
   private timerFour
+  emailMessage: string
+  showEmail: boolean
 
   contactForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+        private apiService: ApiService,
+        private modalService: BsModalService
+    ) {
     this.firstCounter = 1
     this.secondCounter = 1
     this.thirdCounter = 1
     this.fourtCounter = 1
+    this.showEmail = false
   }
 
   ngOnInit() {
@@ -34,6 +45,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       subject: ['', Validators.required],
       message: ['', Validators.required]
    })
+
+   this.showEmail = false
 
   }
 
@@ -80,13 +93,36 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
       this.submitted = true;
+      this.showEmail = false;
 
       if (this.contactForm.invalid) {
           return;
       }
 
-      console.log(this.contactForm.value)
+      let payload = {
+        "name": this.contactForm.get("name").value,
+        "email": this.contactForm.get("email").value,
+        "subject": this.contactForm.get("subject").value,
+        "message": this.contactForm.get("message").value
+      }
 
+      this.apiService.sendEmail(payload).subscribe(res => {
+          this.emailMessage = 'Thank you for your email. We will be in contact.'
+          this.showEmail = true
+          this.showEmailModal()
+      }, error => {
+        this.emailMessage = 'Unable to send email. Please try again!'
+        this.showEmail = true
+      })
+
+  }
+
+  showEmailModal() {
+    this.modalRef = this.modalService.show(this.emailModal)
+  }
+
+  hideModal() {
+    this.modalRef.hide()
   }
 
   goToFacebook() {

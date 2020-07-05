@@ -174,3 +174,19 @@
       </div>  
     </div>
     </section>
+
+<!-- Location Modal Popup -->
+<ng-template #emailModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Thank You</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    {{emailMessage}}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary email-btn" (click)="hideModal()">OK</button>
+  </div>
+</ng-template>

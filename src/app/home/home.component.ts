@@ -110,9 +110,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.emailMessage = 'Thank you for your email. We will be in contact.'
           this.showEmail = true
           this.showEmailModal()
+          console.log('Success')
       }, error => {
         this.emailMessage = 'Unable to send email. Please try again!'
         this.showEmail = true
+        console.log(error)
       })
 
   }

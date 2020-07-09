@@ -131,6 +131,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     window.open('https://www.facebook.com/pages/category/Business-Service/Volt-Drop-Electrical-2111756612447279/', "_blank");
   }
 
+  goToLinkedin() {
+    window.open('https://www.linkedin.com/company/volt-drop-electrical/', "_blank");
+  }
+
   cancel(timer) {
     clearInterval(timer)
   }
